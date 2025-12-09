@@ -1,0 +1,165 @@
+<!--
+Arquivos incluídos neste único documento. Salve cada parte como arquivo separado no seu projeto (pasta /meu-portfolio):
+
+1) index.html      -> salvar como index.html
+2) mainstyle.css   -> salvar como mainstyle.css
+3) mainscript.js   -> salvar como mainscript.js
+
+Adicione suas imagens na mesma pasta:
+- background.png   -> sua imagem de fundo (será desfocada)
+- foto.jpg         -> sua foto de perfil (substitua se quiser)
+- favicon.png      -> ícone da aba (opcional)
+
+Depois de salvar, abra index.html no Live Server (extensão do VS Code) ou direto no navegador.
+-->
+
+<!-- ========================= index.html ========================= -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MEU PORTFOLIO — FULL STACK DEV</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="mainstyle.css">
+</head>
+<body>
+  <!-- fundo desfocado (coloque este elemento logo após <body>) -->
+  <div class="bg-blur" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">MEU PORTFOLIO</div>
+      <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="title">MEU PORTFOLIO</h1>
+        <p class="subtitle">FULL STACK DEV</p>
+        <p class="lead">Transformo ideias em aplicações completas — front-end bonito e back-end confiável.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Ver projetos</a>
+          <a class="btn ghost" href="#contact">Entrar em contato</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="myprofilepicture.jpg" alt="Foto de perfil" class="profile-img">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section about">
+      <div class="container grid">
+        <div class="card glass">
+          <h2>Sobre mim</h2>
+          <p>Sou Full Stack Developer com foco em criar aplicações escaláveis, experiência com JavaScript e bancos de dados. Gosto de interfaces limpas, performance e entregar valor.</p>
+        </div>
+        <div class="card skills glass">
+          <h3>Habilidades</h3>
+          <ul class="skill-list">
+            <li>HTML, CSS, JavaScript</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2>Projetos</h2>
+        <div class="projects-grid">
+          <!-- Card de projeto (clonar e ajustar) -->
+          <article class="project-card glass">
+            <div class="project-media" style="background-image: url('background.jpg')"></div>
+            <div class="project-body">
+              <h3>Projeto Exemplo</h3>
+              <p>Descrição curta do projeto. Tecnologias usadas: HTML, CSS, JS.</p>
+              <div class="project-links">
+                <a class="btn small" href="#">Demo</a>
+                <a class="btn small ghost" href="#">Código</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Repita cards conforme necessário -->
+          <article class="project-card glass">
+            <div class="project-media" style="background-image: url('background.jpg')"></div>
+            <div class="project-body">
+              <h3>Outro Projeto</h3>
+              <p>Breve descrição. Substitua por seus projetos reais.</p>
+              <div class="project-links">
+                <a class="btn small" href="#">Demo</a>
+                <a class="btn small ghost" href="#">Código</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container grid">
+        <div class="card glass contact-card">
+          <h2>Contato</h2>
+          <p>Quer me contratar? Envie uma mensagem:</p>
+
+          <!-- Formulário simples que você pode trocar para Firebase/Supabase depois -->
+          <!-- Exemplo usa FormSubmit: substitua 'your@email.com' por seu email em FormSubmit config -->
+          <form class="contact-form" action="https://formsubmit.co/diogo.lima.personal@gmail.com" method="POST">
+            <label>
+              <span>Nome</span>
+              <input type="text" name="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required>
+            </label>
+            <label>
+              <span>Empresa (opcional)</span>
+              <input type="text" name="company">
+            </label>
+            <label>
+              <span>Mensagem</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="card glass info-card">
+          <h3>Informações</h3>
+          <p>Email: <a href="mailto:diogo.lima.personal@gmail.com">diogo.lima.personal@gmail.com</a></p>
+          <p>Local: Brasil</p>
+          <p>Disponível para trabalho remoto</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> MEU PORTFOLIO — FULL STACK DEV</p>
+    </div>
+  </footer>
+
+  <script src="mainscript.js"></script>
+</body>
+</html>
+
+
+
+
+

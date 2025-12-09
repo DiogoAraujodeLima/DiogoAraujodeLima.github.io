@@ -1,0 +1,116 @@
+/* Salvar como mainstyle.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root{
+  --bg:#0b0f13;
+  --glass: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.04);
+  --accent: #7c5cff;
+  --accent-2: #4bc0c8;
+  --text:#e6eef8;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color:var(--text);
+  background: linear-gradient(180deg, rgba(4,6,8,1) 0%, rgba(10,12,16,1) 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+/* fundo com blur da sua imagem */
+.bg-blur{
+  position:fixed;
+  inset:0;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: left center; /* alinhado à esquerda conforme você pediu */
+  filter: blur(20px);
+  transform: scale(1.06);
+  z-index:-2;
+}
+
+/* uma camada escura por cima do fundo para contraste */
+.bg-blur::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(3,6,10,0.45), rgba(3,6,10,0.6));
+  z-index:1;
+  pointer-events:none;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:700}
+.nav-links{list-style:none;display:flex;gap:16px;margin:0;padding:0}
+.nav-links a{color:var(--text);text-decoration:none;font-weight:500}
+.nav-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:20px}
+
+/* HERO */
+.hero{padding:120px 0 60px;position:relative}
+.hero .container{display:flex;align-items:center;gap:32px}
+.hero-content{flex:1}
+.title{font-size: clamp(28px,6vw,44px);margin:0 0 6px}
+.subtitle{font-size:18px;margin:0 0 12px;opacity:.95}
+.lead{margin:0 0 18px;opacity:.9}
+.hero-actions{display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--text)}
+.btn.small{padding:6px 10px;font-size:13px}
+
+.hero-photo{width:180px;flex-shrink:0}
+.profile-img{width:100%;height:100%;object-fit:cover;border-radius:12px;border:3px solid rgba(255,255,255,0.06)}
+
+/* SECTIONS */
+.section{padding:48px 0}
+.grid{display:grid;gap:24px}
+.about .grid{grid-template-columns:1fr 320px}
+.card{padding:20px;border-radius:14px}
+.glass{background:var(--glass);box-shadow:0 6px 20px rgba(2,6,12,0.6);backdrop-filter: blur(6px);-webkit-backdrop-filter: blur(6px)}
+.skills .skill-list{list-style:none;padding:0;margin:0}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.project-card{overflow:hidden;border-radius:12px;display:flex;flex-direction:column}
+.project-media{height:140px;background-size:cover;background-position:center}
+.project-body{padding:14px}
+.project-links{display:flex;gap:8px;margin-top:10px}
+
+.contact-card{max-width:720px}
+.contact-form label{display:block;margin-bottom:12px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)}
+.form-actions{margin-top:12px}
+
+.info-card{height:fit-content}
+
+.footer{padding:24px 0;text-align:center;opacity:0.9}
+
+/* RESPONSIVO */
+@media (max-width:900px){
+  .hero .container{flex-direction:column-reverse;align-items:flex-start}
+  .hero-photo{width:120px}
+  .about .grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .nav-toggle{display:block}
+}
+
+/* pequeno ajuste para o overlay ::after posicionamento */
+.bg-blur, .bg-blur::after{position:fixed}
+
+
+
+/* utilitários */
+.hidden{display:none}
+
+
+
+/* FIM DO CSS */
+
